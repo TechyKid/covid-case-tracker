@@ -7,7 +7,7 @@ chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage') 
 driver = webdriver.Chrome('/usr/bin/chromedriver', options=chrome_options)   
-answer = input('Choose a country to find there number of Covid-19 cases, \n USA, UK, CA, IRE, BRA, DOM, IND or the World: ') 
+answer = input('Choose a country to find there number of Covid-19 cases, \n USA, UK, CA, IRE, RU, BRA, FR, DOM, IND or the World: ') 
 if answer == 'World': 
     url = 'https://www.worldometers.info/coronavirus/#countries'
     driver.get(url)
@@ -114,7 +114,7 @@ if answer == 'BRA':
     bradeaths = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[8]/td[5]').text)
     print()
     print(brarecovered)
-    recovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[8]/td[7]').text)
+    brarecovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[8]/td[7]').text)
     print('-------------------------------------')
 if answer == 'DOM':
     dom = 'https://www.worldometers.info/coronavirus/#countries'
@@ -151,4 +151,58 @@ if answer == 'IND':
     print()
     print(indrecovered)
     indrecovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[78]/td[7]').text)
+    print('-------------------------------------')
+if answer == 'RU':
+    ru = 'https://www.worldometers.info/coronavirus/#countries'
+    driver.get(ru)
+    print('Finding Data...')
+    time.sleep(1.5)
+    print()
+    rucase = 'Confirmed Cases'
+    rudeaths = 'Confirmed Deaths'
+    rurecovered = 'Recovered'
+    print(rucase)
+    rucases = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[3]').text)
+    print()
+    print(rudeaths)
+    rudeaths = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[5]').text)
+    print()
+    print(rurecovered)
+    rurecovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[7]').text)
+    print('-------------------------------------')
+if answer == 'TUR':
+    tur = 'https://www.worldometers.info/coronavirus/#countries'
+    driver.get(tur)
+    print('Finding Data...')
+    time.sleep(1.5)
+    print()
+    turcase = 'Confirmed Cases'
+    turdeaths = 'Confirmed Deaths'
+    turrecovered = 'Recovered'
+    print(turcase)
+    turcases = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[3]').text)
+    print()
+    print(turdeaths)
+    turdeaths = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[5]').text)
+    print()
+    print(turrecovered)
+    turrecovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[7]').text)
+    print('-------------------------------------')
+if answer == 'FR':
+    fr = 'https://www.worldometers.info/coronavirus/#countries'
+    driver.get(fr)
+    print('Finding Data...')
+    time.sleep(1.5)
+    print()
+    frcase = 'Confirmed Cases'
+    frdeaths = 'Confirmed Deaths'
+    frrecovered = 'Recovered'
+    print(frcase)
+    frcases = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[3]').text)
+    print()
+    print(frdeaths)
+    frdeaths = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[5]').text)
+    print()
+    print(frrecovered)
+    frrecovered = print(driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]/tr[11]/td[7]').text)
     print('-------------------------------------')
