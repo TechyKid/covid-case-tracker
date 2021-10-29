@@ -6,6 +6,8 @@ import time
 chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage') 
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
 driver = webdriver.Chrome('/usr/bin/chromedriver', options=chrome_options)   
 answer = input('Choose a country to find there number of Covid-19 cases, \n USA, UK, CA, IRE, RU, BRA, FR, DOM, IND or the World: ') 
 if answer == 'World': 
